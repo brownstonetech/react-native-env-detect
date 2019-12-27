@@ -3,8 +3,17 @@
   "title": "React Native Env Detect",
   "version": "1.0.0",
   "description": "Detect runtime environment",
-  "main": "index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
+    "build": "yarn build:types && yarn build:js",
+    "build:js": "babel src --root-mode upward --out-dir build/ --extensions \".ts,.tsx\" --ignore build/**/* --ignore types/**/* --source-maps true",
+    "build:types": "tsc --emitDeclarationOnly",
+    "clean": "rm -rf build",
+    "start": "yarn build --watch",
+    "prepublish": "yarn clean && yarn build",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +36,22 @@
     "react-native": ">=0.60.0 <1.0.x"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.0.0",
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.4",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-typescript": "7.3.3",
+    "@types/node": "^12.12.14",
+    "@types/react": "~16.9.0",
+    "@types/react-native": "^0.61.4",
+    "babel-preset-expo": "~8.0.0",
+    "prettier": "^1.18.2",
     "react": "^16.9.0",
-    "react-native": "^0.61.4"
+    "react-native": "^0.61.4",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.2"
   }
 }
