@@ -1,0 +1,33 @@
+{
+  "name": "@bstech/react-native-env-detect",
+  "title": "React Native Env Detect",
+  "version": "1.0.0",
+  "description": "Detect runtime environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brownstonetech/react-native-env-detect.git",
+    "baseUrl": "https://github.com/brownstonetech/react-native-env-detect"
+  },
+  "keywords": [
+    "react-native","environment detect"
+  ],
+  "author": {
+    "name": "Miles Huang",
+    "email": "miles@bstech.ca"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-native": ">=0.60.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "^16.9.0",
+    "react-native": "^0.61.4"
+  }
+}
