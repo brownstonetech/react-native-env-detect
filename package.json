@@ -1,7 +1,7 @@
 {
   "name": "react-native-env-detect",
   "title": "React Native Env Detect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Detect runtime environment",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
