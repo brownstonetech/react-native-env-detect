@@ -36,7 +36,7 @@ public class BSTEnvDetectModule extends ReactContextBaseJavaModule {
         try {
             List<String> fingerprints = getCertificateSignatures();
             for ( String f: fingerprints) {
-                if ( f.equasIgnoreCase(matchingFingerprint)) {
+                if ( f.equalsIgnoreCase(matchingFingerprint)) {
                     promise.resolve("TESTING");
                 }
             }
@@ -48,7 +48,7 @@ public class BSTEnvDetectModule extends ReactContextBaseJavaModule {
         }
     }
 
-    private WriteableArray getCertificateSignatures() throws NameNotFoundException, NoSuchAlgorithmException {
+    private List<String> getCertificateSignatures() throws NameNotFoundException, NoSuchAlgorithmException {
 
         PackageManager pm = this.getReactApplicationContext().getPackageManager();
         String packageName = this.getReactApplicationContext().getPackageName();
