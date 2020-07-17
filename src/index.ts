@@ -6,6 +6,9 @@ const matchingFingerprint: string = '7b:fa:61:ca:b1:f6:5d:65:5c:3a:61:74:e9:12:2
 
 export default async function getEnvAsync(): Promise<EnvironmentType> {
   try {
+    if (__DEV__) {
+      return 'DEV';
+    }
     if (BSTEnvDetect) {
       const ret: EnvironmentType = await BSTEnvDetect.getEnvAsync(matchingFingerprint);
       return ret;
