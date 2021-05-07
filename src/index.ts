@@ -4,13 +4,13 @@ export type EnvironmentType = 'PRODUCTION' | 'DEV' | 'TESTING';
 const BSTEnvDetect = NativeModules.BSTEnvDetect;
 const matchingFingerprint: string = '7b:fa:61:ca:b1:f6:5d:65:5c:3a:61:74:e9:12:26:a5:4c:05:11:4c';
 
-export default async function getEnvAsync(): Promise<EnvironmentType> {
+export default async function getEnvAsync(uploadFingerprint: string = matchingFingerprint): Promise<EnvironmentType> {
   try {
     if (__DEV__) {
       return 'DEV';
     }
     if (BSTEnvDetect) {
-      const ret: EnvironmentType = await BSTEnvDetect.getEnvAsync(matchingFingerprint);
+      const ret: EnvironmentType = await BSTEnvDetect.getEnvAsync(uploadFingerprint);
       return ret;
     }
   } catch (e) {
